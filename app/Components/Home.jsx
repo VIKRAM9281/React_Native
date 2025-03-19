@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import {  Text,View,Button,Alert, TextInput,StyleSheet } from 'react-native';
-import { homeecss } from '../../styles/Home.css';
+import { homeCss } from '../../styles/Home.css';
+import AboutUs from "../../"
 const Home=()=>{
+    const HomeBtn=()=>{
+        Alert.Alert("Home Page")
+     }
     return(
-        <View style={homeecss.navbar}>
-            <Text>Home</Text>
-            <Text>About</Text>
-            <Text>Contact</Text>
-            <Text>login</Text>
+        <View style={homeCss.navbar}>
+            <Text style={homeCss.NavButton} onClick={HomeBtn}>Home</Text>
+            <Text style={homeCss.NavButton} onClick={HomeBtn}>About</Text>
+            <Text style={homeCss.NavButton}>Contact</Text>
+            <Text style={homeCss.NavButton}>login</Text>
         </View>
     )
 }
-export default Home;
+export default Home
