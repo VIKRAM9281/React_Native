@@ -2,6 +2,11 @@
   "expo": {
     "android": {
       "package": "com.vikram7397.myapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1f9e58dc-066c-432c-9786-5b3d44638721"
+      }
     }
   }
 }
