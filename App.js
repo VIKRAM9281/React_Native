@@ -8,6 +8,7 @@ import Login from './app/Components/Login';
 import Footer from './app/subcomponents/Footer';
 
 export default function App() {
+  const [isLoggedIn,setIsLoggedin]=useState(false)
   const [SelectPage,setSelectpage]=useState("Home")
 
   const HandleChangePage=(value)=>{
@@ -15,11 +16,11 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Navbar HandleChangePage={HandleChangePage}/>
+      <Navbar HandleChangePage={HandleChangePage} isLoggedIn={isLoggedIn} />
        {SelectPage==="Home" &&<Home/>}
        {SelectPage==="AboutUs" && <About/>}
        {SelectPage==="Contact" && <Contact/>}
-       {SelectPage==="Login" && <Login/>}
+       {SelectPage==="Login" && <Login HandleChangePage={HandleChangePage} setIsLoggedin={setIsLoggedin} isLoggedIn={isLoggedIn} />}
        <Footer/>
     </View>
   );
