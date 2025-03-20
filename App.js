@@ -1,11 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './app/Components/Home';
+import Navbar from './app/subcomponents/Navbar';
+import { useState } from 'react';
+import About from './app/Components/About';
+import Contact from './app/Components/Contact';
+import Login from './app/Components/Login';
+import Footer from './app/subcomponents/Footer';
 
 export default function App() {
+  const [SelectPage,setSelectpage]=useState("Home")
+
+  const HandleChangePage=(value)=>{
+    setSelectpage(value)
+  }
   return (
     <View style={styles.container}>
-       <Home/>
+      <Navbar HandleChangePage={HandleChangePage}/>
+       {SelectPage==="Home" &&<Home/>}
+       {SelectPage==="AboutUs" && <About/>}
+       {SelectPage==="Contact" && <Contact/>}
+       {SelectPage==="Login" && <Login/>}
+       <Footer/>
     </View>
   );
 }
