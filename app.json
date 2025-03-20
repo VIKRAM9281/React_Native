@@ -1,7 +1,13 @@
 {
   "expo": {
+    "name": "MyApp",
+    "slug": "myapp",
+    "icon": "./assets/icon.png",
     "android": {
-      "package": "com.vikram7397.myapp"
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
     },
     "extra": {
       "eas": {
