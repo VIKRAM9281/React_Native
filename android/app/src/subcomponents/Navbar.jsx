@@ -1,5 +1,5 @@
 import {  Text,View} from 'react-native';
-import { NavbarCss } from '../../styles/Navbar.css';
+import { NavbarCss } from '../styles/Navbar.css.js';
 const Navbar=({HandleChangePage,isLoggedIn})=>{
     const Logout=async()=>{
         if(isLoggedIn){
