@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native"
 const Footer=()=>{
     return(
         <View style={styles.footer}>
-            <Text style={{textAlign:"center",color:"white"}}>© 2025 Company, Inc. All rights reserved.</Text>
+            <Text style={{textAlign:"center",color:"white"}}>© 2025 ReactDev Academy, Inc. All rights reserved.</Text>
         </View>
     )
 }
