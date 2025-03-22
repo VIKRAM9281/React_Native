@@ -37,14 +37,10 @@ const Login = ({ HandleChangePage, setIsLoggedin, isLoggedIn }) => {
         Alert.alert("Enter Password");
       }
     } else {
-      if (inputdata.UserName === "Vikram7397" && inputdata.Password === "Test@123") {
         Alert.alert("Login Successful");
         await AsyncStorage.setItem("Credentials", JSON.stringify(inputdata));
         HandleChangePage("Home");
         setIsLoggedin(true);
-      } else {
-        Alert.alert("Enter Valid UserName And Password");
-      }
     }
   };
 
