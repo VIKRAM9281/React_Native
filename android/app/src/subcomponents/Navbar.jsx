@@ -8,12 +8,17 @@ const Navbar=({HandleChangePage,isLoggedIn})=>{
 
         }
     }
+    const HandleNavigate=(value)=>{
+        if(isLoggedIn){
+            HandleChangePage(value)
+        }
+    }
     return(
         <View style={NavbarCss.navbar}>
-            <Text style={NavbarCss.NavButton} onPress={() => HandleChangePage("Home")}>Home</Text>
-            <Text style={NavbarCss.NavButton} onPress={()=>HandleChangePage("AboutUs")}>About</Text>
-            <Text style={NavbarCss.NavButton} onPress={() => HandleChangePage("Contact")}>Contact</Text>
-            <Text style={NavbarCss.NavButton} onPress={() => HandleChangePage("Login")}>{isLoggedIn? "Logout":"Login"}</Text>
+            <Text style={NavbarCss.NavButton} onPress={() => HandleNavigate("Home")}>Home</Text>
+            <Text style={NavbarCss.NavButton} onPress={()=>HandleNavigate("AboutUs")}>About</Text>
+            <Text style={NavbarCss.NavButton} onPress={() => HandleNavigate("Contact")}>Contact</Text>
+            <Text style={NavbarCss.NavButton} onPress={() => HandleNavigate("Login")}>{isLoggedIn? "Logout":"Login"}</Text>
         </View>
     )
 }

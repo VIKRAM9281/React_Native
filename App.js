@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import Home from './android/app/src/Components/Home';
 import Navbar from './android/app/src/subcomponents/Navbar';
 import { useState } from 'react';
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Navbar HandleChangePage={HandleChangePage} isLoggedIn={isLoggedIn} />
-       {SelectPage==="Home" &&<Home/>}
+       {SelectPage==="Home" && !isLoggedIn? <Login HandleChangePage={HandleChangePage} setIsLoggedin={setIsLoggedin} isLoggedIn={isLoggedIn}/>: isLoggedIn && SelectPage==="Home"&& <Home/>}
        {SelectPage==="AboutUs" && <About/>}
        {SelectPage==="Contact" && <Contact/>}
        {SelectPage==="Login" && <Login HandleChangePage={HandleChangePage} setIsLoggedin={setIsLoggedin} isLoggedIn={isLoggedIn} />}
